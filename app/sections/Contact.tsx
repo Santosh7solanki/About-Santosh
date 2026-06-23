@@ -61,10 +61,10 @@ export default function Contact() {
             Contact
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
-            Let's work together
+            Let&apos;s work together
           </h2>
           <p className="text-muted-foreground mt-3 max-w-md mx-auto text-sm">
-            Have a project in mind or an opportunity to share? I'd love to hear from you.
+            Have a project in mind or an opportunity to share? I&apos;d love to hear from you.
           </p>
         </motion.div>
 
@@ -107,7 +107,7 @@ export default function Contact() {
                 <span className="text-sm font-semibold">Available for work</span>
               </div>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                I'm actively looking for React.js / Next.js opportunities. Response time is typically within 24 hours.
+                I&apos;m actively looking for React.js / Next.js opportunities. Response time is typically within 24 hours.
               </p>
             </div>
           </motion.div>
@@ -122,7 +122,7 @@ export default function Contact() {
               {status === "success" && (
                 <div className="flex items-center gap-2 px-4 py-3 rounded-xl bg-green-500/10 border border-green-500/20 text-green-600 dark:text-green-400 text-sm">
                   <CheckCircle size={16} />
-                  Message sent! I'll get back to you soon.
+                  Message sent! I&apos;ll get back to you soon.
                 </div>
               )}
               {status === "error" && (

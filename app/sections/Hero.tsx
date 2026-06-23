@@ -50,7 +50,7 @@ export default function Hero() {
             custom={0.2}
             className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4"
           >
-            Hi, I'm{" "}
+            Hi, I&apos;m{" "}
             <span className="gradient-text">{profile.name}</span>
           </motion.h1>
 

@@ -24,7 +24,7 @@ export default function Projects() {
             Projects
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
-            Things I've shipped
+            Things I&apos;ve shipped
           </h2>
           <p className="text-muted-foreground mt-3 max-w-xl mx-auto text-sm">
             Production-grade applications built across various domains — OTT, sports, services, and community platforms.
