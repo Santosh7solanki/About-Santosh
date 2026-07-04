@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Send, Mail, Phone, Linkedin, Github, MapPin, CheckCircle, AlertCircle } from "lucide-react";
+import emailjs from "@emailjs/browser";
 import { profile } from "@/lib/data";
 
 type FormData = { name: string; email: string; message: string };
@@ -32,11 +33,38 @@ export default function Contact() {
     e.preventDefault();
     if (!validate()) return;
     setStatus("loading");
-    // Simulate sending — replace with EmailJS or Firebase here
-    await new Promise((r) => setTimeout(r, 1500));
-    setStatus("success");
-    setForm({ name: "", email: "", message: "" });
-    setTimeout(() => setStatus("idle"), 5000);
+    try {
+
+      const submittedAt = new Date().toLocaleString("en-IN", {
+  day: "2-digit",
+  month: "long",
+  year: "numeric",
+  hour: "2-digit",
+  minute: "2-digit",
+  hour12: true,
+  timeZone: "Asia/Kolkata",
+});
+
+      const result = await emailjs.send(
+  process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+  process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+  { 
+    from_name: form.name, 
+    from_email: form.email, 
+    message: form.message,
+    time: submittedAt,
+    to_email: process.env.NEXT_PUBLIC_EMAILJS_TO_EMAIL
+  },
+  process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+);
+      setStatus("success");
+      setForm({ name: "", email: "", message: "" });
+      setTimeout(() => setStatus("idle"), 5000);
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 5000);
+    }
   };
 
   const contacts = [

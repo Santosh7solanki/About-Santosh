@@ -40,13 +40,13 @@ export default function Navbar() {
         <a
           href="#"
           onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
-          className="flex items-center gap-2 font-mono font-medium text-sm group"
+          className="flex items-center gap-2 font-mono font-medium text-sm group cursor-default"
         >
           <span className="w-7 h-7 rounded-lg bg-primary flex items-center justify-center text-primary-foreground">
             <Code2 size={14} />
           </span>
           <span className="text-foreground/80 group-hover:text-foreground transition-colors">
-            santosh<span className="text-primary">.dev</span>
+            about<span className="text-primary">-santosh</span>
           </span>
         </a>
 

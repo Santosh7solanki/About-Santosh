@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/app/components/ThemeProvider";
-
+import { profile } from "@/lib/data";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
@@ -24,15 +24,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://santoshsolanki.dev",
+    url: "https://about-santosh.vercel.app/",
     title: "Santosh Solanki — Frontend React.js Developer",
     description:
       "3.6+ years of experience building scalable, performant web apps with React.js, Next.js, and TypeScript.",
     siteName: "Santosh Solanki Portfolio",
     images: [
       {
-        url: "https://ui-avatars.com/api/?name=Santosh+Solanki&size=1200&background=6366f1&color=ffffff&bold=true",
-        width: 1200,
+       // url: "https://ui-avatars.com/api/?name=Santosh+Solanki&size=1200&background=6366f1&color=ffffff&bold=true",
+       url: profile.avatar,
+       width: 1200,
         height: 630,
         alt: "Santosh Solanki — Frontend React.js Developer",
       },
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
     description:
       "3.6+ years of experience building scalable web apps with React.js, Next.js, and TypeScript.",
     images: [
-      "https://ui-avatars.com/api/?name=Santosh+Solanki&size=1200&background=6366f1&color=ffffff&bold=true",
+     profile.avatar
     ],
   },
   robots: {
@@ -52,7 +53,34 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
-  alternates: { canonical: "https://santoshsolanki.dev" },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+    other: [
+      {
+        rel: "icon",
+        url: "/favicon-16x16.png",
+        sizes: "16x16",
+      },
+      {
+        rel: "icon",
+        url: "/favicon-32x32.png",
+        sizes: "32x32",
+      },
+      {
+        rel: "icon",
+        url: "/android-chrome-192x192.png",
+        sizes: "192x192",
+      },
+      {
+        rel: "icon",
+        url: "/android-chrome-512x512.png",
+        sizes: "512x512",
+      },
+    ],
+  },
+  alternates: { canonical: "https://about-santosh.vercel.app/" },
 };
 
 export default function RootLayout({
@@ -73,7 +101,7 @@ export default function RootLayout({
               "@type": "Person",
               name: "Santosh Solanki",
               jobTitle: "Frontend React.js Developer",
-              url: "https://santoshsolanki.dev",
+              url: "https://about-santosh.vercel.app/",
               email: "santoshsolanki0716@gmail.com",
               telephone: "+918717837777",
               address: { "@type": "PostalAddress", addressLocality: "Indore", addressCountry: "IN" },
