@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Mail, MapPin, Sparkles } from "lucide-react";
+import { ArrowDown, Download, Github, Linkedin, Mail, MapPin, Sparkles } from "lucide-react";
 import { profile } from "@/lib/data";
 
 const fadeUp = {
@@ -116,6 +116,14 @@ export default function Hero() {
               <Mail size={15} />
               Contact Me
             </button>
+            <a
+              href="/santosh_solanki_resume.pdf"
+              download="Santosh_Solanki_Resume.pdf"
+              className="flex items-center gap-2 px-6 py-3 font-medium rounded-xl border border-primary/50 text-primary hover:bg-primary/10 transition-all hover:scale-105 active:scale-95"
+            >
+              <Download size={15} />
+              Download CV
+            </a>
           </motion.div>
 
           {/* Social Links */}
